@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Us - Akhil Bhartiye Samaj</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Donate to Akhil Bhartiye Samaj</h1>
+        <form id="donationForm" action="#" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+                <label for="amount">Donation Amount (INR)</label>
+                <input type="number" id="amount" name="amount" required min="10">
+                <span class="error" id="amountError"></span>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image (Optional)</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <img id="imagePreview" src="#" alt="Image Preview" style="display:none;" />
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Choose Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="paytm">Paytm</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="gpay">Google Pay</option>
+                    <option value="netbanking">Net Banking</option>
+                    <option value="scanner">QR Code Scanner</option>
+                </select>
+            </div>
+
+            <div id="qrScanner" class="qr-scanner" style="display:none;">
+                <h2>Scan the QR Code to Pay</h2>
+                <div id="qrCode">
+                    <img src="images/img15.png" alt="QR Code" />
+                </div>
+                <p>Use your mobile payment app to scan the QR code and complete the payment.</p>
+            </div>
+
+            <div id="paymentOptions" style="display:none;">
+                <p id="paymentDetails"></p>
+            </div>
+            <form id="donationForm" action="index.html" method="post" enctype="multipart/form-data">
+                <!-- form fields here -->
+                <button type="submit">Donate Now</button>
+            </form>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
